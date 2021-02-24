@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width" />
         <title>Nick Pranno Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="./css/final_stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/final_stylesheet.css">
     </head>
 
     <!--Body-->
@@ -14,8 +14,9 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()"></a> <!-- this makes it so our openForm function runs when we click the navbar-->
         </div>
         
         <!--Breaks inserted to add space-->
@@ -34,19 +35,77 @@
         <!--Video Text-->
         <div class="Video_Text">
             <h1 class="white-text">Nick Pranno's Portfolio</h1>
-            <strong>
-                <p class="center">
-                    <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
-                        <br>field of battle and to command such unswervingly dutiful actors or troops.
-                    </q>
-                    <br> -Joseph Weizenbaum
-                    <br>
-                    <br> My name is Nick Pranno. Welcome to my portfolio website. On it, I will tell you about my background and experience.
-                    <br>
-                    <br>Thank you for stopping by and enjoy!
+                <p>
+                    <strong>
+                        <center>
+                            <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
+                                <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or
+                                <br>field of battle and to command such unswervingly dutiful actors or troops.
+                            </q>
+                            <br> -Joseph Weizenbaum
+                            <br>
+                            <br> My name is Nick Pranno. Welcome to my portfolio website. On it, I will tell you about my background and experience.
+                            <br>
+                            <br>Thank you for stopping by and enjoy!
+                        </center>
+                    </strong>
                 </p>
-            </strong>
+        </div>
+
+    <!--Slideshow Section-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+
+                    <div class="mySlides fade">
+                        <div class="Slide_number">1 / 6</div>
+                        <img class="Slide_Show_Images" src=./images/me.jpg style="width:100%">
+                            <div class = "text">I'm available to assist you on your project!</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="Slide_number">2 / 6</div>
+                        <img class="Slide_Show_Images" src=./images/me.jpg style="width:100%">
+                            <div class = "text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="Slide_number">3 / 6</div>
+                        <img class="Slide_Show_Images" src=./images/me.jpg style="width:100%">
+                            <div class = "text">the popular programming language Python,</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="Slide_number">4 / 6</div>
+                        <img class="Slide_Show_Images" src=./images/me.jpg style="width:100%">
+                            <div class = "text">C#, .NET Framework, ASP.NET, MVC,</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="Slide_number">5 / 6</div>
+                        <img class="Slide_Show_Images" src=./images/me.jpg style="width:100%">
+                            <div class = "text">back end development, databases and SQL.</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="Slide_number">6 / 6</div>
+                        <img class="Slide_Show_Images" src=./images/me.jpg style="width:100%">
+                            <div class = "text">
+                                <a onclick=openForm() href="#Contact" style="color:white;"></a>
+                            </div>
+                    </div>
+
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+            </div>
+        <br>
+                <div style="text-align: center;">
+                
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                
+                </div>
         </div>
 
         <!--About Section-->
@@ -57,7 +116,7 @@
             </div>
             <!--Right Column-->
             <div class="Column_1">
-                <h1>About</h1>
+                <h1 style="font-size:2.5vw;">About</h1>
                 <p>
                     I am a software developer who loves to code! Growing up I was always fascinated by computers and how they work.
                     <br>
@@ -85,26 +144,28 @@
             </div>
         </div>
 
-        <!--Contact Section-->
-        <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="./images/message.jpg" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
+        <!-- Contact section -->
+        <div id="Contact"> 
+            <button onclick="openForm()" class="Pop_Up_Button"> CONTACT </button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container"> <!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
                 <h1>Contact</h1>
-                <!--Specifies where and how to send the form data; leaving it blank-->
-                <form action="" method="POST">
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
-                </form>
-            </div>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                    <input type="text" placeholder="Enter your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>		
+                    <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                    <input type="text" placeholder="Type your message here" name="message">
+        
+            <button type="submit" class="btn">SUBMIT</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+	    </form>
+	  </div>
+  </div>
+
+        
         </div>
 
         <!--Footer section-->
@@ -114,5 +175,8 @@
                 <br>
             </p>
         </footer>
+
+        <script src="./JS/portfolio.js"></script>
+        
     </body>
 </html>
