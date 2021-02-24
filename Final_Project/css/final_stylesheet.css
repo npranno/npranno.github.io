@@ -250,7 +250,7 @@ html {
       float: left;  
       width: 50%; /* This ensures one column takes up half the page width */
       padding: 1.6%; 
-      background-color: #f2f2f2; 
+      background-color: #c436fc; 
       height: 448px; /* You may need to adjust this to fit your content */
   }
   
@@ -274,7 +274,7 @@ html {
       font-family: "Trebuchet MS", Optima; 
       text-align: center;
       margin-top: 3%; /* We are adding a small margin above the headings */
-      color: #1a1a1a;
+      color: #ffffff;
   }
   
   /* Paragraph elements */
@@ -334,7 +334,7 @@ html {
   
   /* Heading 1 element hover effect */
   h1:hover {
-      color: black;
+      color: white;
       font-weight: normal; /* Makes the text no longer bold when hovered over */ 
   
   }
