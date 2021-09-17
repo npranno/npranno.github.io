@@ -230,7 +230,7 @@ html {
   
   /* Hover effect for slideshow dots */ 
   .active, .dot:hover {
-    background-color: black;
+    background-color: darkgrey;
   }
   
   /* Fading animation for slideshow */
